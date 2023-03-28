@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b8dd51b-faf1-47f9-a0f1-4ec98c854f24" name="Changes" comment="back for java">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/TestDeConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+    <list default="true" id="1b8dd51b-faf1-47f9-a0f1-4ec98c854f24" name="Changes" comment="update, read avec mysql DBeaver">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/TestDeConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/TestDeConnection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +77,19 @@
       <option name="presentableId" value="Default" />
       <updated>1680020741664</updated>
     </task>
+    <task id="LOCAL-00001" summary="back for java">
+      <created>1680029516069</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1680029516069</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="back for java" />
+    <MESSAGE value="update, read avec mysql DBeaver" />
+    <option name="LAST_COMMIT_MESSAGE" value="update, read avec mysql DBeaver" />
   </component>
 </project>

@@ -12,33 +12,41 @@ public class TestDeConnection {
             //MySQL driver MySQL Connector
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/tennis?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=Europe/Paris","root","246810");
 
+            conn.setAutoCommit(false);
 
-            long identifiant =5L;
+            long identifiant =24L;
+            String nom = "Errani";
+            String prenom = "sahara";
+            String sexe = "F";
+            PreparedStatement preparedStatement = conn.prepareStatement("INSERT INTO JOUEUR (NOM,PRENOM,SEXE) VALUE (?,?,?)");
+            preparedStatement.setString(1, nom);
+            preparedStatement.setString(2, prenom);
+            preparedStatement.setString(3, sexe );
+
+preparedStatement.executeUpdate();
 
 
-            PreparedStatement preparedStatement = conn.prepareStatement("SELECT nom,prenom, id FROM joueur WHERE id=?");
-            preparedStatement.setLong(1, identifiant );
-            ResultSet res = preparedStatement.executeQuery();
+            prenom = "josh";
+            nom = "Bryan";
+            sexe = "H";
+
+            preparedStatement.setString(1, nom);
+            preparedStatement.setString(2, prenom);
+            preparedStatement.setString(3, sexe);
 
 
-            if (res.next()) {
-               final String nom = res.getString("nom");
-               final String prenom = res.getString("prenom");
-                final long id = res.getLong("id");
-                System.out.println("le joueur ou la joueuse representé par le numéro "+id+" ce prénomme "+nom+" "+prenom+" ");
-            }
-            else {
+preparedStatement.executeUpdate();
 
-                System.out.println("Il n'existe personne avec cet identifiant");
-            }
+           conn.commit();
 
-            //Oracle Driver officiel OJDBC Thin
-            //conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:tennis","COURSDB","COURSDB");
-            //Postgres Driver officiel
-            //conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/tennis","COURSDB","COURSDB");
             System.out.println("success");
         } catch (SQLException e) {
             e.printStackTrace();
+            try {
+                conn.rollback();
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
         }
         finally {
             try {
