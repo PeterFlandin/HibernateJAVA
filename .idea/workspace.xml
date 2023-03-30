@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b8dd51b-faf1-47f9-a0f1-4ec98c854f24" name="Changes" comment="crud">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/entity/Joueur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/repository/JoueurRepository.java" afterDir="false" />
+    <list default="true" id="1b8dd51b-faf1-47f9-a0f1-4ec98c854f24" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/DataSourceProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/TestDeConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/TestDeConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/repository/JoueurRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/repository/JoueurRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680039186868</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="crud">
+      <created>1680115916626</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680115916626</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -102,5 +110,15 @@
     <MESSAGE value="update, read avec mysql DBeaver" />
     <MESSAGE value="crud" />
     <option name="LAST_COMMIT_MESSAGE" value="crud" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.StringIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

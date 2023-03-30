@@ -1,8 +1,10 @@
 package com.mycompany.tennis.basededonnee.repository;
 
+import com.mycompany.tennis.basededonnee.DataSourceProvider;
 import com.mycompany.tennis.basededonnee.entity.Joueur;
 import org.apache.commons.dbcp2.BasicDataSource;
 
+import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,14 +19,8 @@ public class JoueurRepository {
         Connection conn = null;
         try {
 
-            BasicDataSource dataSource = new BasicDataSource();
+            DataSource dataSource = DataSourceProvider.getSingleDataSourceInstance();
 
-            dataSource.setInitialSize(5);
-
-            dataSource.setUrl("jdbc:mysql://localhost:3306/tennis?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=Europe/Paris");
-
-            dataSource.setUsername("root");
-            dataSource.setPassword("246810");
 
             //conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/tennis?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=Europe/Paris","root","246810");
             conn = dataSource.getConnection();
@@ -62,14 +58,8 @@ public class JoueurRepository {
         Connection conn = null;
         try {
 
-            BasicDataSource dataSource = new BasicDataSource();
+            DataSource dataSource = DataSourceProvider.getSingleDataSourceInstance();
 
-            dataSource.setInitialSize(5);
-
-            dataSource.setUrl("jdbc:mysql://localhost:3306/tennis?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=Europe/Paris");
-
-            dataSource.setUsername("root");
-            dataSource.setPassword("246810");
 
             //conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/tennis?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=Europe/Paris","root","246810");
             conn = dataSource.getConnection();
@@ -77,8 +67,8 @@ public class JoueurRepository {
             PreparedStatement preparedStatement = conn.prepareStatement("UPDATE JOUEUR SET NOM=?, PRENOM=? ,SEXE=? WHERE id=?");
             preparedStatement.setString(1, joueur.getNom());
             preparedStatement.setString(2, joueur.getPrenom());
-            preparedStatement.setString(3, joueur.getSexe().toString() );
-             preparedStatement.setLong(4, joueur.getId());
+                preparedStatement.setString(3, joueur.getSexe().toString());
+            preparedStatement.setLong(4, joueur.getId());
 
             preparedStatement.executeUpdate();
 
@@ -109,14 +99,8 @@ public class JoueurRepository {
         Connection conn = null;
         try {
 
-            BasicDataSource dataSource = new BasicDataSource();
+            DataSource dataSource = DataSourceProvider.getSingleDataSourceInstance();
 
-            dataSource.setInitialSize(5);
-
-            dataSource.setUrl("jdbc:mysql://localhost:3306/tennis?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=Europe/Paris");
-
-            dataSource.setUsername("root");
-            dataSource.setPassword("246810");
 
             //conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/tennis?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=Europe/Paris","root","246810");
             conn = dataSource.getConnection();
@@ -154,14 +138,8 @@ public class JoueurRepository {
         Joueur joueur = null;
         try {
 
-            BasicDataSource dataSource = new BasicDataSource();
+            DataSource dataSource = DataSourceProvider.getSingleDataSourceInstance();
 
-            dataSource.setInitialSize(5);
-
-            dataSource.setUrl("jdbc:mysql://localhost:3306/tennis?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=Europe/Paris");
-
-            dataSource.setUsername("root");
-            dataSource.setPassword("246810");
 
             //conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/tennis?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=Europe/Paris","root","246810");
             conn = dataSource.getConnection();
@@ -178,11 +156,10 @@ if (res.next()){
     joueur=new Joueur();
    joueur.setId(id);
    joueur.setNom(res.getString("nom"));
-   joueur.setSexe(res.getString("sexe").charAt(1));
    joueur.setPrenom(res.getString("prenom"));
 }
 
-            System.out.println("Joueur");
+            System.out.println("Joueur lu");
         } catch (SQLException e) {
             e.printStackTrace();
             try {
@@ -205,34 +182,26 @@ if (res.next()){
     }
 
     public List<Joueur> list() {
-      List<Joueur> joueurs =new ArrayList();
+      List<Joueur> joueurs =new ArrayList<>();
         Connection conn = null;
-        Joueur joueur = null;
         try {
 
-            BasicDataSource dataSource = new BasicDataSource();
-
-            dataSource.setInitialSize(5);
-
-            dataSource.setUrl("jdbc:mysql://localhost:3306/tennis?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=Europe/Paris");
-
-            dataSource.setUsername("root");
-            dataSource.setPassword("246810");
+       DataSource dataSource = DataSourceProvider.getSingleDataSourceInstance();
 
             //conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/tennis?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=Europe/Paris","root","246810");
             conn = dataSource.getConnection();
 
-            PreparedStatement preparedStatement = conn.prepareStatement("SELECT nom,prenom,sexe FROM joueur WHERE id=?");
+            PreparedStatement preparedStatement = conn.prepareStatement("SELECT id,nom,prenom,sexe FROM joueur");
 
             ResultSet res = preparedStatement.executeQuery();
 
             while (res.next()){
 
-                joueur=new Joueur();
+                Joueur joueur=new Joueur();
                 joueur.setId(res.getLong("id"));
                 joueur.setNom(res.getString("nom"));
-                joueur.setSexe(res.getString("sexe").charAt(1));
                 joueur.setPrenom(res.getString("prenom"));
+                joueur.setSexe(res.getString("sexe").charAt(0));
                 joueurs.add(joueur);
             }
 
