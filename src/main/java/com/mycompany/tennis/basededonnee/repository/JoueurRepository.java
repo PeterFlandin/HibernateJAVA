@@ -5,15 +5,11 @@ import com.mycompany.tennis.basededonnee.entity.Joueur;
 import org.apache.commons.dbcp2.BasicDataSource;
 
 import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class JoueurRepository {
-
 
   public void create(Joueur joueur) {
         Connection conn = null;
@@ -25,13 +21,19 @@ public class JoueurRepository {
             //conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/tennis?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=Europe/Paris","root","246810");
             conn = dataSource.getConnection();
 
-            PreparedStatement preparedStatement = conn.prepareStatement("INSERT INTO JOUEUR (NOM,PRENOM,SEXE) VALUE (?,?,?)");
+            PreparedStatement preparedStatement = conn.prepareStatement("INSERT INTO JOUEUR (NOM,PRENOM,SEXE) VALUE (?,?,?)",Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, joueur.getNom());
             preparedStatement.setString(2, joueur.getPrenom());
             preparedStatement.setString(3, joueur.getSexe().toString() );
 
             preparedStatement.executeUpdate();
 
+
+            ResultSet res = preparedStatement.getGeneratedKeys();
+
+            if (res.next()){
+                joueur.setId(res.getLong(1));
+            }
 
             System.out.println("Joueur crée");
         } catch (SQLException e) {
@@ -71,6 +73,10 @@ public class JoueurRepository {
             preparedStatement.setLong(4, joueur.getId());
 
             preparedStatement.executeUpdate();
+preparedStatement.getGeneratedKeys();
+ResultSet res = preparedStatement.getGeneratedKeys();
+
+
 
 
             System.out.println("Joueur modifié");
@@ -151,13 +157,13 @@ public class JoueurRepository {
 
            ResultSet res = preparedStatement.executeQuery();
 
-if (res.next()){
+    if (res.next()){
 
-    joueur=new Joueur();
+     joueur=new Joueur();
    joueur.setId(id);
    joueur.setNom(res.getString("nom"));
    joueur.setPrenom(res.getString("prenom"));
-}
+   }
 
             System.out.println("Joueur lu");
         } catch (SQLException e) {
@@ -223,6 +229,7 @@ if (res.next()){
                 e.printStackTrace();
             }
         }
+
 
         return joueurs;
     }
