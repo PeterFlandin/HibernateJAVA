@@ -5,6 +5,7 @@ import com.mycompany.tennis.basededonnee.entity.Tournoi;
 import com.mycompany.tennis.basededonnee.repository.JoueurRepository;
 import com.mycompany.tennis.basededonnee.repository.TournoiRepository;
 import com.mycompany.tennis.basededonnee.service.JoueurService;
+import com.mycompany.tennis.basededonnee.service.TournoiService;
 
 import java.util.List;
 
@@ -13,8 +14,6 @@ public class TestDeConnection {
     public static void main(String... args){
 
         JoueurService joueurService = new JoueurService();
-         JoueurService joueurService1 = new JoueurService();
-
 
          Joueur noah = new Joueur();
          noah.setPrenom("yannick");
@@ -27,10 +26,16 @@ public class TestDeConnection {
 
 
        //---------------------------------
+        TournoiService tournoiService = new TournoiService();
 
-        
-        Joueur bartoum = joueurService1.getJoueur(25L);
-        System.out.println(bartoum.getId());
+        Tournoi nouveauTournoi = new Tournoi();
+
+        nouveauTournoi.setNom("zanzibaropen");
+        nouveauTournoi.setCode("ZB");
+
+        tournoiService.createTournoi(nouveauTournoi);
+
+        System.out.println(nouveauTournoi.getNom());
 
             }
 

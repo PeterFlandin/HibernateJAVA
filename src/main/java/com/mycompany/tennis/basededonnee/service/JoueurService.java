@@ -6,7 +6,7 @@ import com.mycompany.tennis.basededonnee.repository.JoueurRepository;
 public class JoueurService {
 
     private JoueurRepository joueurRepository1;
- //  private  JoueurRepository joueurRepository2;
+  private  JoueurRepository joueurRepository2;
     public JoueurService(){
         this.joueurRepository1=new JoueurRepository();
     }
