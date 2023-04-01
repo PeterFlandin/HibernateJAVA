@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b8dd51b-faf1-47f9-a0f1-4ec98c854f24" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/service/TournoiService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/entity/Epreuve.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/entity/Match.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/entity/Score.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/repository/MatchRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/repository/ScoreRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/service/MatchService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/TestDeConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/TestDeConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/repository/TournoiRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/repository/TournoiRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/service/JoueurService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/service/JoueurService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680292575736</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="service add tournoi">
+      <created>1680301467009</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1680301467009</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -132,7 +142,8 @@
     <MESSAGE value="repository" />
     <MESSAGE value="repository Tournoi created" />
     <MESSAGE value="service add" />
-    <option name="LAST_COMMIT_MESSAGE" value="service add" />
+    <MESSAGE value="service add tournoi" />
+    <option name="LAST_COMMIT_MESSAGE" value="service add tournoi" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
