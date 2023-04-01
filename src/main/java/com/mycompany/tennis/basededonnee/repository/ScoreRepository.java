@@ -8,7 +8,7 @@ import javax.sql.DataSource;
 import java.sql.*;
 
 public class ScoreRepository {
-    public void create(Score score) {
+       public void create(Score score) {
         Connection conn = null;
         try {
 
