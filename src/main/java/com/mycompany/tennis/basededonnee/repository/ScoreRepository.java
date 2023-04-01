@@ -27,7 +27,7 @@ public class ScoreRepository {
                 preparedStatement.setNull(4, Types.TINYINT );
 
             } else {
-                preparedStatement.setByte(4, score.getSet4());
+                preparedStatement.setByte(4, score.getSet3());
             }
 
             if (score.getSet4()==null){

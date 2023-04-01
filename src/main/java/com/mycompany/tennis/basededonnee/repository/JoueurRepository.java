@@ -24,7 +24,7 @@ public class JoueurRepository {
             PreparedStatement preparedStatement = conn.prepareStatement("INSERT INTO JOUEUR (NOM,PRENOM,SEXE) VALUE (?,?,?)",Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, joueur.getNom());
             preparedStatement.setString(2, joueur.getPrenom());
-            preparedStatement.setString(3, joueur.getSexe().toString() );
+            preparedStatement.setString(3, joueur.getSexe().toString().toUpperCase());
 
             preparedStatement.executeUpdate();
 
