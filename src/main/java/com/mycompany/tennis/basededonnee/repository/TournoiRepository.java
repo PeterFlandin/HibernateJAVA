@@ -121,7 +121,7 @@ return listetournoi;
 
             PreparedStatement preparedStatement = conn.prepareStatement("INSERT INTO tournoi (nom,code) VALUE (?,?)", Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, tournoi.getNom());
-            preparedStatement.setString(2, tournoi.getCode());
+            preparedStatement.setString(2, tournoi.getCode().toUpperCase());
 
             preparedStatement.executeUpdate();
 
