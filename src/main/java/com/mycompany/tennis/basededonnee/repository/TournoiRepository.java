@@ -65,10 +65,25 @@ return listetournoi;
 }
 
     public Tournoi getById(Long id) {
-        session = HibernateUtil.getSessionFactory().getCurrentSession();
-        Tournoi tournoi = session.get(Tournoi.class, id);
-        System.out.println("Touurnoi lu");
-        return tournoi;
+       Tournoi tournoi = null;
+       Session session = null;
+
+       try {
+
+           session = HibernateUtil.getSessionFactory().openSession();
+           tournoi = session.get(Tournoi.class, id);
+
+           System.out.println("Tournoi lu");
+
+       } catch (Throwable t){
+           t.printStackTrace();
+       } finally {
+           if (session!=null){
+               session.close();
+           }
+           return  tournoi;
+       }
+
     }
 
     public void create(Tournoi tournoi) {

@@ -1,13 +1,8 @@
 package com.mycompany.tennis.basededonnee.entity;
 
-import javax.persistence.*;
 
-@Entity
-@Table(name = "match_tennis")
 public class Match {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 private Joueur vainqueur;
 private Joueur finaliste;

@@ -3,7 +3,6 @@ package com.mycompany.tennis.basededonnee.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "match_tennis")
 public class Joueur {
 
     @Id

@@ -5,20 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b8dd51b-faf1-47f9-a0f1-4ec98c854f24" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/HibernateUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/entity/Epreuve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/entity/Epreuve.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/entity/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/entity/Joueur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/entity/Match.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/entity/Match.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/entity/Tournoi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/entity/Tournoi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/repository/JoueurRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/repository/JoueurRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/repository/TournoiRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/repository/TournoiRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../console-ui/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../console-ui/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../console-ui/src/main/java/com/mycompany/tennis/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../console-ui/src/main/java/com/mycompany/tennis/UI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../console-ui/src/main/java/com/mycompany/tennis/controller/JoueurController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../console-ui/src/main/java/com/mycompany/tennis/controller/JoueurController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../console-ui/src/main/java/com/mycompany/tennis/controller/TournoiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../console-ui/src/main/java/com/mycompany/tennis/controller/TournoiController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680387053933</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Hibernate">
+      <created>1680554528254</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1680554528254</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -205,7 +206,8 @@
     <MESSAGE value="service add tournoi entre federer et muray dans la base   donnee sql dbeaver" />
     <MESSAGE value="Dao" />
     <MESSAGE value="Controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="Controller" />
+    <MESSAGE value="Hibernate" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hibernate" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

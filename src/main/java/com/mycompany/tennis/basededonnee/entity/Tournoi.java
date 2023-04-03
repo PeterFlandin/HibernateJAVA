@@ -4,7 +4,6 @@ package com.mycompany.tennis.basededonnee.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "tournoi")
 public class Tournoi {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,5 +1,11 @@
 package com.mycompany.tennis.basededonnee.entity;
 
+import org.hibernate.annotations.Table;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+
+
 public class Epreuve {
 
   private  Long id;
