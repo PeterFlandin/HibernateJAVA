@@ -1,8 +1,10 @@
 package com.mycompany.tennis.basededonnee.repository;
 
 import com.mycompany.tennis.basededonnee.DataSourceProvider;
+import com.mycompany.tennis.basededonnee.HibernateUtil;
 import com.mycompany.tennis.basededonnee.entity.Joueur;
 import com.mycompany.tennis.basededonnee.entity.Tournoi;
+import org.hibernate.Session;
 
 import javax.sql.DataSource;
 import java.sql.*;
@@ -10,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TournoiRepository {
+    Session session =null;
 
 public List<Tournoi> list () {
     List<Tournoi> listetournoi = new ArrayList<>();
@@ -59,53 +62,12 @@ public List<Tournoi> list () {
         }
     }
 return listetournoi;
-
 }
 
     public Tournoi getById(Long id) {
-        Connection conn = null;
-        Tournoi tournoi = null;
-        try {
-
-            DataSource dataSource = DataSourceProvider.getSingleDataSourceInstance();
-
-
-            //conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/tennis?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=Europe/Paris","root","246810");
-            conn = dataSource.getConnection();
-
-            PreparedStatement preparedStatement = conn.prepareStatement("SELECT nom,code FROM tournoi WHERE id=?");
-
-            preparedStatement.setLong(1, id);
-
-
-            ResultSet res = preparedStatement.executeQuery();
-
-            if (res.next()){
-                tournoi=new Tournoi();
-                tournoi.setId(id);
-                tournoi.setNom(res.getString("nom"));
-                tournoi.setCode(res.getString("code"));
-            }
-
-            System.out.println("Joueur lu");
-        } catch (SQLException e) {
-            e.printStackTrace();
-            try {
-                conn.rollback();
-            } catch (SQLException ex) {
-                throw new RuntimeException(ex);
-            }
-        }
-        finally {
-            try {
-                if (conn!=null) {
-                    conn.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-
+        session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Tournoi tournoi = session.get(Tournoi.class, id);
+        System.out.println("Touurnoi lu");
         return tournoi;
     }
 

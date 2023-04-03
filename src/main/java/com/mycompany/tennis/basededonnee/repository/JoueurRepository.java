@@ -1,8 +1,10 @@
 package com.mycompany.tennis.basededonnee.repository;
 
 import com.mycompany.tennis.basededonnee.DataSourceProvider;
+import com.mycompany.tennis.basededonnee.HibernateUtil;
 import com.mycompany.tennis.basededonnee.entity.Joueur;
-import org.apache.commons.dbcp2.BasicDataSource;
+import org.hibernate.Hibernate;
+import org.hibernate.Session;
 
 import javax.sql.DataSource;
 import java.sql.*;
@@ -135,56 +137,30 @@ ResultSet res = preparedStatement.getGeneratedKeys();
                 e.printStackTrace();
             }
         }
-
     }
 
 
     public Joueur getById(Long id) {
-        Connection conn = null;
-        Joueur joueur = null;
-        try {
+      Joueur joueur = null;
+      Session session = null;
 
-            DataSource dataSource = DataSourceProvider.getSingleDataSourceInstance();
+      try {
 
+          session=HibernateUtil.getSessionFactory().openSession();
+         joueur = session.get(Joueur.class,id);
 
-            //conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/tennis?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=Europe/Paris","root","246810");
-            conn = dataSource.getConnection();
-
-            PreparedStatement preparedStatement = conn.prepareStatement("SELECT nom,prenom,sexe FROM joueur WHERE id=?");
-
-            preparedStatement.setLong(1, id);
+          System.out.println("Joueur ajouté");
 
 
-           ResultSet res = preparedStatement.executeQuery();
 
-    if (res.next()){
-
-        joueur=new Joueur();
-   joueur.setId(id);
-   joueur.setNom(res.getString("nom"));
-   joueur.setPrenom(res.getString("prenom"));
-   }
-
-            System.out.println("Joueur lu");
-        } catch (SQLException e) {
-            e.printStackTrace();
-            try {
-                conn.rollback();
-            } catch (SQLException ex) {
-                throw new RuntimeException(ex);
-            }
-        }
-        finally {
-            try {
-                if (conn!=null) {
-                    conn.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-
-        return joueur;
+      } catch (Throwable t) {
+         t.printStackTrace();
+      } finally {
+          if (session!=null){
+              session.close();
+          }
+      }
+      return  joueur;
     }
 
     public List<Joueur> list() {

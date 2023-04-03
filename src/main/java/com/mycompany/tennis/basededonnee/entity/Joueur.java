@@ -1,7 +1,13 @@
 package com.mycompany.tennis.basededonnee.entity;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "match_tennis")
 public class Joueur {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nom;
     private String prenom;
