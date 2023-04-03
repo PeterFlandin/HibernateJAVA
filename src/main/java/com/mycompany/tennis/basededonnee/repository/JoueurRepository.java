@@ -5,6 +5,7 @@ import com.mycompany.tennis.basededonnee.HibernateUtil;
 import com.mycompany.tennis.basededonnee.entity.Joueur;
 import org.hibernate.Hibernate;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import javax.sql.DataSource;
 import java.sql.*;
@@ -14,46 +15,28 @@ import java.util.List;
 public class JoueurRepository {
 
   public void create(Joueur joueur) {
-        Connection conn = null;
+      Session session = null;
+      Transaction tx = null;
         try {
-
-            DataSource dataSource = DataSourceProvider.getSingleDataSourceInstance();
-
-
-            //conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/tennis?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=Europe/Paris","root","246810");
-            conn = dataSource.getConnection();
-
-            PreparedStatement preparedStatement = conn.prepareStatement("INSERT INTO JOUEUR (NOM,PRENOM,SEXE) VALUE (?,?,?)",Statement.RETURN_GENERATED_KEYS);
-            preparedStatement.setString(1, joueur.getNom());
-            preparedStatement.setString(2, joueur.getPrenom());
-            preparedStatement.setString(3, joueur.getSexe().toString().toUpperCase());
-
-            preparedStatement.executeUpdate();
-
-
-            ResultSet res = preparedStatement.getGeneratedKeys();
-
-            if (res.next()){
-                joueur.setId(res.getLong(1));
-            }
-
+session = HibernateUtil.getSessionFactory().openSession();
+tx = session.beginTransaction();
+            session.persist(joueur);
+            tx.commit();
             System.out.println("Joueur crée");
-        } catch (SQLException e) {
-            e.printStackTrace();
-            try {
-                conn.rollback();
-            } catch (SQLException ex) {
-                throw new RuntimeException(ex);
+
+        } catch (Throwable e) {
+            if(tx == null){
+                tx.rollback();
             }
+            e.printStackTrace();
+
+
         }
         finally {
-            try {
-                if (conn!=null) {
-                    conn.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+           if (session != null){
+               session.close();
+           }
+
         }
 
     }
