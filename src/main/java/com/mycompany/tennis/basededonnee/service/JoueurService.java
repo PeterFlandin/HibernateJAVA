@@ -18,6 +18,10 @@ public class JoueurService {
         return joueurRepository1.getById(id);
     }
 
+    public void renomme (Long id, String nouveauNom){
+        joueurRepository1.renomme(id,nouveauNom);
+    }
+
 
 
 

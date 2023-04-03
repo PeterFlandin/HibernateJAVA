@@ -7,10 +7,8 @@
     <list default="true" id="1b8dd51b-faf1-47f9-a0f1-4ec98c854f24" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/repository/JoueurRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/repository/JoueurRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/repository/TournoiRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/repository/TournoiRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../console-ui/src/main/java/com/mycompany/tennis/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../console-ui/src/main/java/com/mycompany/tennis/UI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/service/JoueurService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/service/JoueurService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../console-ui/src/main/java/com/mycompany/tennis/controller/JoueurController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../console-ui/src/main/java/com/mycompany/tennis/controller/JoueurController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../console-ui/src/main/java/com/mycompany/tennis/controller/TournoiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../console-ui/src/main/java/com/mycompany/tennis/controller/TournoiController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680555880394</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="création tournoi avec hibernate mysql">
+      <created>1680562435388</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1680562435388</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -213,7 +218,8 @@
     <MESSAGE value="Controller" />
     <MESSAGE value="Hibernate" />
     <MESSAGE value="Erreur Hibernate ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="Erreur Hibernate ok" />
+    <MESSAGE value="création tournoi avec hibernate mysql" />
+    <option name="LAST_COMMIT_MESSAGE" value="création tournoi avec hibernate mysql" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

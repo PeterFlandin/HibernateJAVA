@@ -14,6 +14,33 @@ import java.util.List;
 
 public class JoueurRepository {
 
+    public void renomme(Long id, String nouveauNom ){
+
+        Joueur joueur = null;
+        Session session = null;
+Transaction tx = null;
+        try {
+
+            session=HibernateUtil.getSessionFactory().openSession();
+            tx = session.beginTransaction();
+            joueur = session.get(Joueur.class,id);
+            joueur.setNom(nouveauNom);
+            tx.commit();
+            System.out.println("Joueur modifié");
+
+
+
+        } catch (Throwable t) {
+            if (tx!=null){
+                tx.rollback();
+            }
+            t.printStackTrace();
+        } finally {
+            if (session!=null){
+                session.close();
+            }
+        }
+    }
   public void create(Joueur joueur) {
       Session session = null;
       Transaction tx = null;
