@@ -1,7 +1,10 @@
 package com.mycompany.tennis.basededonnee.service;
 
+import com.mycompany.tennis.basededonnee.HibernateUtil;
 import com.mycompany.tennis.basededonnee.entity.Joueur;
 import com.mycompany.tennis.basededonnee.repository.JoueurRepository;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 public class JoueurService {
     private JoueurRepository joueurRepository1;
@@ -11,19 +14,74 @@ public class JoueurService {
     }
 
   public void createJoueur(Joueur joueur){
-      joueurRepository1.create(joueur);
+      Session session=null;
+      Transaction tx = null;
+      try {
+          session = HibernateUtil.getSessionFactory().getCurrentSession();
+          joueurRepository1.create(joueur);
+          tx.commit();
+          System.out.println("Joueur ajouté");
+      } catch (Throwable e) {
+          if(tx == null){
+              tx.rollback();
+          }
+          e.printStackTrace();
+      }
+      finally {
+          if (session!=null){
+              session.close();
+          }
+      }
    }
 
     public Joueur getJoueur(Long id){
-        return joueurRepository1.getById(id);
+        Session session=null;
+        Transaction tx = null;
+        Joueur joueur = null;
+        try {
+            session = HibernateUtil.getSessionFactory().getCurrentSession();
+            joueur =  joueurRepository1.getById(id);
+            session.merge(joueur);
+            tx.commit();
+            System.out.println("Joueur lu");
+        } catch (Throwable e) {
+            if(tx == null){
+                tx.rollback();
+            }
+            e.printStackTrace();
+        }
+        finally {
+        if (session!=null){
+            session.close();
+        }
+    }
+        return joueur;
     }
 
     public void renomme (Long id, String nouveauNom){
-        joueurRepository1.renomme(id,nouveauNom);
+
+        Joueur joueur= getJoueur(id);
+
+        Session session=null;
+        Transaction tx = null;
+        try {
+            session = HibernateUtil.getSessionFactory().getCurrentSession();
+            joueur =  joueurRepository1.getById(id);
+            joueur.setNom(nouveauNom);
+           Joueur joueur1 = (Joueur) session.merge(joueur);
+            tx.commit();
+            System.out.println("Joueur modifier");
+
+        } catch (Throwable e) {
+            if(tx == null){
+                tx.rollback();
+            }
+            e.printStackTrace();
+
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
     }
-
-
-
-
-
 }

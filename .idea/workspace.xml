@@ -23,7 +23,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../console-ui" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -202,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680562435388</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="modification joueur avec hibernate mysql">
+      <created>1680564159652</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1680564159652</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -219,7 +226,8 @@
     <MESSAGE value="Hibernate" />
     <MESSAGE value="Erreur Hibernate ok" />
     <MESSAGE value="création tournoi avec hibernate mysql" />
-    <option name="LAST_COMMIT_MESSAGE" value="création tournoi avec hibernate mysql" />
+    <MESSAGE value="modification joueur avec hibernate mysql" />
+    <option name="LAST_COMMIT_MESSAGE" value="modification joueur avec hibernate mysql" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
