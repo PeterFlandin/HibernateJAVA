@@ -41,9 +41,6 @@ public class JoueurRepository {
 preparedStatement.getGeneratedKeys();
 ResultSet res = preparedStatement.getGeneratedKeys();
 
-
-
-
             System.out.println("Joueur modifié");
         } catch (SQLException e) {
             e.printStackTrace();
@@ -104,15 +101,16 @@ ResultSet res = preparedStatement.getGeneratedKeys();
 
 
     public Joueur getById(Long id) {
-      Joueur joueur = null;
-      Session session = null;
+         Joueur joueur = null;
+         Session session = null;
 
          session = HibernateUtil.getSessionFactory().getCurrentSession();
          joueur = session.get(Joueur.class,id);
-          System.out.println("Joueur ajouté");
+         System.out.println("Joueur lu");
 
-      return  joueur;
+        return joueur;
     }
+
 
     public List<Joueur> list() {
       List<Joueur> joueurs =new ArrayList<>();

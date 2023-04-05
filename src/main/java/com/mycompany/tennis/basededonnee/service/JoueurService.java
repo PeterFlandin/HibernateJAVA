@@ -40,10 +40,9 @@ public class JoueurService {
         Joueur joueur = null;
         try {
             session = HibernateUtil.getSessionFactory().getCurrentSession();
+           tx = session.beginTransaction();
             joueur =  joueurRepository1.getById(id);
-            session.merge(joueur);
             tx.commit();
-            System.out.println("Joueur lu");
         } catch (Throwable e) {
             if(tx == null){
                 tx.rollback();
@@ -60,15 +59,16 @@ public class JoueurService {
 
     public void renomme (Long id, String nouveauNom){
 
-        Joueur joueur= getJoueur(id);
-
+        Joueur joueur = getJoueur(id);
         Session session=null;
         Transaction tx = null;
+
         try {
             session = HibernateUtil.getSessionFactory().getCurrentSession();
-            joueur =  joueurRepository1.getById(id);
+            tx = session.beginTransaction();
             joueur.setNom(nouveauNom);
-           Joueur joueur1 = (Joueur) session.merge(joueur);
+
+            Joueur joueur1 = (Joueur)session.merge(joueur);
             tx.commit();
             System.out.println("Joueur modifier");
 
@@ -84,4 +84,5 @@ public class JoueurService {
             }
         }
     }
+
 }
