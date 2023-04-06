@@ -227,7 +227,21 @@
       <option name="project" value="LOCAL" />
       <updated>1680794583035</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="creation service methode changement de sexe">
+      <created>1680794711299</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1680794711299</updated>
+    </task>
+    <task id="LOCAL-00019" summary="creation service methode changement de sexe">
+      <created>1680794847451</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1680794847451</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
