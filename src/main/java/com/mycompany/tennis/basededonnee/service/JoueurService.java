@@ -85,4 +85,35 @@ public class JoueurService {
         }
     }
 
+    public void changeSexe (Long id, Character sexe){
+        Joueur joueur = getJoueur(id);
+        Transaction tx = null;
+        Session session = null;
+
+        try {
+            session = HibernateUtil.getSessionFactory().getCurrentSession();
+            tx = session.beginTransaction();
+
+            joueur.setSexe(sexe);
+
+            Joueur joueursexe = (Joueur) session.merge(joueur);
+            tx.commit();
+
+            System.out.println("changer de sexe");
+
+
+        } catch (Throwable throwable){
+            if (tx != null){
+                tx.rollback();
+            }
+            throwable.printStackTrace();
+        } finally {
+            if (session != null)
+            session.close();
+        }
+
+    }
+
+
+
 }
