@@ -75,26 +75,10 @@ return listetournoi;
     }
 
     public void create(Tournoi tournoi) {
-    Session session = null;
-        Transaction tx = null;
-        try {
 
-            session = HibernateUtil.getSessionFactory().openSession();
-          tx = session.beginTransaction();
-            session.persist(tournoi);
-            tx.commit();
-            System.out.println("tournoi crée");
-        } catch (Throwable e) {
-            if (tx!=null){
-                tx.rollback();
-            }
-            e.printStackTrace();
-        }
-        finally {
-         if (session!=null){
-             session.close();
-            }
-        }
+    Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+    session.persist(tournoi);
+        System.out.println("Tournoi créer");
 
     }
 

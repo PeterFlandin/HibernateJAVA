@@ -15,7 +15,25 @@ public TournoiService(){
 }
 
 public void createTournoi(Tournoi tournoi){
-    tournoiRepository.create(tournoi);
+    Session session = null;
+    Transaction tx = null;
+    try {
+
+        session = HibernateUtil.getSessionFactory().getCurrentSession();
+        tx = session.beginTransaction();
+        tournoiRepository.create(tournoi);
+        tx.commit();
+
+    } catch (Throwable tr){
+        if (tx != null){
+            tx.rollback();
+        }
+        tr.printStackTrace();
+    } finally {
+        if (session!=null){
+            session.close();
+        }
+    }
 }
 
 public Tournoi getTournoi (Long id){
