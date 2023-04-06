@@ -65,25 +65,13 @@ return listetournoi;
 }
 
     public Tournoi getById(Long id) {
-       Tournoi tournoi = null;
-       Session session = null;
+        Session session = null;
+        Tournoi tournoi =null;
 
-       try {
-
-           session = HibernateUtil.getSessionFactory().openSession();
-           tournoi = session.get(Tournoi.class, id);
-
-           System.out.println("Tournoi lu");
-
-       } catch (Throwable t){
-           t.printStackTrace();
-       } finally {
-           if (session!=null){
-               session.close();
-           }
-           return  tournoi;
-       }
-
+     session = HibernateUtil.getSessionFactory().getCurrentSession();
+    tournoi = session.get(Tournoi.class, id);
+        System.out.println("Tournoi lu");
+    return  tournoi;
     }
 
     public void create(Tournoi tournoi) {
@@ -111,8 +99,15 @@ return listetournoi;
     }
 
 
+public void delete(Long id){
 
+    Tournoi tournoi = getById(id);
 
+    Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 
+    session.delete(tournoi);
 
+    System.out.println("Tournoi supprimé");
+
+}
 }
