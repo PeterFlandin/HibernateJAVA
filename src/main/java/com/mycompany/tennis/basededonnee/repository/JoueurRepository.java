@@ -21,43 +21,18 @@ public class JoueurRepository {
             System.out.println("Joueur crée");
     }
 
-   
+
 
 
     public void delete(Long id) {
-        Connection conn = null;
-        try {
+       Joueur joueur = getById(id);
 
-            DataSource dataSource = DataSourceProvider.getSingleDataSourceInstance();
+     Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 
+    session.delete(joueur);
 
-            //conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/tennis?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=Europe/Paris","root","246810");
-            conn = dataSource.getConnection();
+        System.out.println("Jouueur supprimé");
 
-            PreparedStatement preparedStatement = conn.prepareStatement("DELETE FROM joueur WHERE id=?");
-
-            preparedStatement.setLong(1, id);
-            preparedStatement.executeUpdate();
-
-
-            System.out.println("Joueur suprimer");
-        } catch (SQLException e) {
-            e.printStackTrace();
-            try {
-                conn.rollback();
-            } catch (SQLException ex) {
-                throw new RuntimeException(ex);
-            }
-        }
-        finally {
-            try {
-                if (conn!=null) {
-                    conn.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
     }
 
 

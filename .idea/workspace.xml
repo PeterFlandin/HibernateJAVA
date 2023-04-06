@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b8dd51b-faf1-47f9-a0f1-4ec98c854f24" name="Changes" comment="">
+    <list default="true" id="1b8dd51b-faf1-47f9-a0f1-4ec98c854f24" name="Changes" comment="creation service changement de sexe">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/repository/JoueurRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/repository/JoueurRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/service/JoueurService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/service/JoueurService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../console-ui/src/main/java/com/mycompany/tennis/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../console-ui/src/main/java/com/mycompany/tennis/UI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../console-ui/src/main/java/com/mycompany/tennis/controller/JoueurController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../console-ui/src/main/java/com/mycompany/tennis/controller/JoueurController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +24,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../console-ui" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -255,7 +259,21 @@
       <option name="project" value="LOCAL" />
       <updated>1680795195735</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="creation service changement de sexe">
+      <created>1680795352418</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1680795352418</updated>
+    </task>
+    <task id="LOCAL-00023" summary="supression de update hibernate">
+      <created>1680795659984</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1680795659984</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -277,7 +295,8 @@
     <MESSAGE value="continuation hibernate erreur" />
     <MESSAGE value="creation service methode changement de sexe" />
     <MESSAGE value="creation service changement de sexe" />
-    <option name="LAST_COMMIT_MESSAGE" value="creation service changement de sexe" />
+    <MESSAGE value="supression de update hibernate" />
+    <option name="LAST_COMMIT_MESSAGE" value="supression de update hibernate" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

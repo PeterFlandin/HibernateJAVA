@@ -13,6 +13,14 @@ public class JoueurService {
         this.joueurRepository1=new JoueurRepository();
     }
 
+
+
+
+
+
+
+
+
   public void createJoueur(Joueur joueur){
       Session session=null;
       Transaction tx = null;
@@ -115,5 +123,28 @@ public class JoueurService {
     }
 
 
+    public void deleteJoueur (Long id) {
+        Session session = null;
+        Transaction tx = null;
 
+        try {
+
+            session = HibernateUtil.getSessionFactory().getCurrentSession();
+            tx = session.beginTransaction();
+
+            joueurRepository1.delete(id);
+            tx.commit();
+
+        } catch (Throwable tr) {
+            if (tr != null){
+                tx.rollback();
+            }
+            tr.printStackTrace();
+        }
+        finally {
+            if (session!=null){
+                session.close();
+            }
+        }
+    }
 }
