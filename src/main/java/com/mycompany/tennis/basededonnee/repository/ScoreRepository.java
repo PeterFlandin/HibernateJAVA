@@ -1,8 +1,10 @@
 package com.mycompany.tennis.basededonnee.repository;
 
 import com.mycompany.tennis.basededonnee.DataSourceProvider;
+import com.mycompany.tennis.basededonnee.HibernateUtil;
 import com.mycompany.tennis.basededonnee.entity.Joueur;
 import com.mycompany.tennis.basededonnee.entity.Score;
+import org.hibernate.Session;
 
 import javax.sql.DataSource;
 import java.sql.*;
@@ -72,5 +74,16 @@ public class ScoreRepository {
         }
 
     }
+    public Score getById(Long id) {
+        Score score  = null;
+        Session session = null;
+
+        session = HibernateUtil.getSessionFactory().getCurrentSession();
+        score = session.get(Score.class,id);
+        System.out.println("Score lu");
+
+        return score;
+    }
+
 
 }

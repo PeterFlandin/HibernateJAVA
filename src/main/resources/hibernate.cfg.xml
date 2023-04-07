@@ -41,6 +41,7 @@
         <mapping class="com.mycompany.tennis.basededonnee.entity.Score" />
         <mapping class="com.mycompany.tennis.basededonnee.entity.Match" />
 
+
     </session-factory>
 
 </hibernate-configuration>
