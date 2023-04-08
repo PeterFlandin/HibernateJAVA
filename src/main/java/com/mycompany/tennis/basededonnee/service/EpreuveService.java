@@ -30,9 +30,6 @@ public class EpreuveService {
             tx = session.beginTransaction();
             epreuve = epreuveRepository.getById(id);
 
-            Hibernate.initialize(epreuve.getTournoi());
-
-            tx.commit();
 
             dto = new EpreuveFullDto();
             dto.setId(epreuve.getId());
@@ -41,6 +38,7 @@ public class EpreuveService {
             TournoiDto tournoiDto = new TournoiDto();
             tournoiDto.setId(epreuve.getTournoi().getId());
             tournoiDto.setNom(epreuve.getTournoi().getNom());
+            tx.commit();
 
         } catch (Throwable tr) {
             if (tx != null){
@@ -72,12 +70,15 @@ public class EpreuveService {
             tx = session.beginTransaction();
             epreuve = epreuveRepository.getById(id);
 
-            tx.commit();
 
              dto = new EpreuveLiteDto();
             dto.setId(epreuve.getId());
             dto.setAnnee(epreuve.getAnnee());
 dto.setTypeEpreuve(epreuve.getTypeEpreuve());
+
+            tx.commit();
+
+
         } catch (Throwable tr) {
             if (tx != null){
                 tx.rollback();

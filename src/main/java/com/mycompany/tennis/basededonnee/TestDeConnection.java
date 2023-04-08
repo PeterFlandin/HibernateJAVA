@@ -34,7 +34,7 @@ public class TestDeConnection {
         nouveauTournoi.setNom("zanzibaropen");
         nouveauTournoi.setCode("ZB");
 
-        tournoiService.createTournoi(nouveauTournoi);
+         //tournoiService.createTournoi();
 
         System.out.println(nouveauTournoi.getNom());
 
