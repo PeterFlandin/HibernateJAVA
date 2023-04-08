@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b8dd51b-faf1-47f9-a0f1-4ec98c854f24" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/service/ScoreService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../console-ui/src/main/java/com/mycompany/tennis/controller/ScoreController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/repository/EpreuveRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/service/EpreuveService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../console-ui/src/main/java/com/mycompany/tennis/controller/EpreuveController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/entity/Epreuve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/entity/Epreuve.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/entity/Score.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/entity/Score.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/repository/ScoreRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/repository/ScoreRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../console-ui/src/main/java/com/mycompany/tennis/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../console-ui/src/main/java/com/mycompany/tennis/UI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../console-ui/src/main/java/com/mycompany/tennis/controller/TournoiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../console-ui/src/main/java/com/mycompany/tennis/controller/TournoiController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +25,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../console-ui" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -71,6 +68,9 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Administrateur\IdeaProjects\basededonnee\src\main\java\com\mycompany\tennis\basededonnee" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.mycompany.tennis.basededonnee.repository" />
     </key>
   </component>
   <component name="RunManager" selected="Application.UI">
@@ -298,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680823726783</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="transient &amp; mapping">
+      <created>1680905994736</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1680905994736</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -324,7 +331,8 @@
     <MESSAGE value="supression joueur" />
     <MESSAGE value="supression tournoi ok" />
     <MESSAGE value="Ajout tournoi ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout tournoi ok" />
+    <MESSAGE value="transient &amp; mapping" />
+    <option name="LAST_COMMIT_MESSAGE" value="transient &amp; mapping" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

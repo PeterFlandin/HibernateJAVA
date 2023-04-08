@@ -11,10 +11,12 @@ public class Epreuve {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-  private  Long id;
-  private int annee;
-@Transient
+@Type(type = "long")
+  private Long id;
+    @Type(type = "short")
+  private Short annee;
+@ManyToOne
+@JoinColumn(name = "id_tournoi")
   private  Tournoi tournoi;
 @Column(name = "TYPE_EPREUVE")
   private  Character typeEpreuve;
@@ -35,11 +37,11 @@ public class Epreuve {
         this.id = id;
     }
 
-    public int getAnnee() {
+    public Short getAnnee() {
         return annee;
     }
 
-    public void setAnnee(int annee) {
+    public void setAnnee(Short annee) {
         this.annee = annee;
     }
 
