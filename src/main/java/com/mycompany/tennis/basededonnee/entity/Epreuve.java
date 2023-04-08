@@ -15,7 +15,7 @@ public class Epreuve {
   private Long id;
     @Type(type = "short")
   private Short annee;
-@ManyToOne
+@ManyToOne(fetch = FetchType.LAZY)
 @JoinColumn(name = "id_tournoi")
   private  Tournoi tournoi;
 @Column(name = "TYPE_EPREUVE")
