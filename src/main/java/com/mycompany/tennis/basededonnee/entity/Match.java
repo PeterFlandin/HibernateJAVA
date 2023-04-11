@@ -16,7 +16,8 @@ private Joueur vainqueur;
 @JoinColumn(name = "id_finaliste")
 private Joueur finaliste;
 
-@Transient
+@OneToOne(fetch = FetchType.LAZY)
+@JoinColumn(name = "id_epreuve")
 private Epreuve epreuve;
 @Transient
 private Score score;
