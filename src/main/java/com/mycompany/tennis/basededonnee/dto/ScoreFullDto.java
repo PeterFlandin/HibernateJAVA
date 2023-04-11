@@ -1,39 +1,26 @@
-package com.mycompany.tennis.basededonnee.entity;
+package com.mycompany.tennis.basededonnee.dto;
 
-import javax.persistence.*;
+import com.mycompany.tennis.basededonnee.entity.Match;
 
-@Entity
-@Table(name = "SCORE_VAINQUEUR")
-public class Score {
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
+import javax.persistence.Column;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+public class ScoreFullDto {
+
     private Long id;
-@Column(name = "SET_1")
     private Byte set1;
-    @Column(name = "SET_2")
 
     private Byte set2;
-    @Column(name = "SET_3")
 
     private Byte set3;
-    @Column(name = "SET_4")
 
     private Byte set4;
-    @Column(name = "SET_5")
 
     private Byte set5;
 
-@OneToOne(fetch = FetchType.LAZY)
-@JoinColumn(name = "id_match")
-    private Match match;
-
-    public Match getMatch() {
-        return match;
-    }
-
-    public void setMatch(Match match) {
-        this.match = match;
-    }
+    private MatchDto matchDto;
 
     public Long getId() {
         return id;
@@ -81,5 +68,13 @@ public class Score {
 
     public void setSet5(Byte set5) {
         this.set5 = set5;
+    }
+
+    public MatchDto getMatchDto() {
+        return matchDto;
+    }
+
+    public void setMatchDto(MatchDto matchDto) {
+        this.matchDto = matchDto;
     }
 }
