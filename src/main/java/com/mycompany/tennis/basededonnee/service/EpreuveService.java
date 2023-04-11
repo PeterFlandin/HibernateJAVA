@@ -74,7 +74,7 @@ public class EpreuveService {
              dto = new EpreuveLiteDto();
             dto.setId(epreuve.getId());
             dto.setAnnee(epreuve.getAnnee());
-dto.setTypeEpreuve(epreuve.getTypeEpreuve());
+            dto.setTypeEpreuve(epreuve.getTypeEpreuve());
 
             tx.commit();
 

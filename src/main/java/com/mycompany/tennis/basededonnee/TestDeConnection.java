@@ -40,33 +40,33 @@ public class TestDeConnection {
 
 
 //------------------------------------------
-        MatchService matchService = new MatchService();
+      //  MatchService matchService = new MatchService();
 
-        Match match = new Match();
-        Score score=new Score();
+      //  Match match = new Match();
+       // Score score=new Score();
 
-        score.setSet1((byte)3);
-        score.setSet2((byte)4);
-        score.setSet3((byte)6);
+       // score.setSet1((byte)3);
+      //  score.setSet2((byte)4);
+      //  score.setSet3((byte)6);
 
-        match.setScore(score);
-        score.setMatch(match);
+       // match.setScore(score);
+       // score.setMatch(match);
 
-        Joueur federer = new Joueur();
-        federer.setId(32L);
+        //Joueur federer = new Joueur();
+        //federer.setId(32L);
 
-        Joueur muray = new Joueur();
-        muray.setId(34L);
+       // Joueur muray = new Joueur();
+       // muray.setId(34L);
 
-        match.setVainqueur(federer);
-        match.setFinaliste(muray);
+       // match.setVainqueur(federer);
+       // match.setFinaliste(muray);
 
-        Epreuve epreuve = new Epreuve();
-        epreuve.setId(1L);
+       // Epreuve epreuve = new Epreuve();
+       // epreuve.setId(1L);
 
-        match.setEpreuve(epreuve);
+       // match.setEpreuve(epreuve);
 
-        matchService.enregistrerNouveauMatch(match);
+      //  matchService.enregistrerNouveauMatch(match);
 
     }
   }
