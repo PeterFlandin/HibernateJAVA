@@ -4,6 +4,7 @@ import org.hibernate.annotations.Table;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 
@@ -20,6 +21,20 @@ public class Epreuve {
   private  Tournoi tournoi;
 @Column(name = "TYPE_EPREUVE")
   private  Character typeEpreuve;
+
+@ManyToMany
+@JoinTable(name = "participants",
+        joinColumns = {@JoinColumn (name = "id_epreuve")},
+        inverseJoinColumns = {@JoinColumn (name = "id_joueur")})
+private Set<Joueur> participants;
+
+    public Set<Joueur> getParticipants() {
+        return participants;
+    }
+
+    public void setParticipants(Set<Joueur> participant) {
+        this.participants = participant;
+    }
 
     public Character getTypeEpreuve() {
         return typeEpreuve;

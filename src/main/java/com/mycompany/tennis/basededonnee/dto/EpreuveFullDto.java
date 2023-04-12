@@ -1,12 +1,23 @@
 package com.mycompany.tennis.basededonnee.dto;
 
 
+import java.util.Set;
 
 public class EpreuveFullDto {
     private Long id;
     private Short annee;
     private TournoiDto tournoi;
     private  Character typeEpreuve;
+
+    private Set<JoueurDto> participants;
+
+    public Set<JoueurDto> getParticipants() {
+        return participants;
+    }
+
+    public void setParticipants(Set<JoueurDto> participants) {
+        this.participants = participants;
+    }
 
     public Character getTypeEpreuve() {
         return typeEpreuve;
