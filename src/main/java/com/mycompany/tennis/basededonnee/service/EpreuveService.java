@@ -1,10 +1,7 @@
 package com.mycompany.tennis.basededonnee.service;
 
 import com.mycompany.tennis.basededonnee.HibernateUtil;
-import com.mycompany.tennis.basededonnee.dto.EpreuveFullDto;
-import com.mycompany.tennis.basededonnee.dto.EpreuveLiteDto;
-import com.mycompany.tennis.basededonnee.dto.JoueurDto;
-import com.mycompany.tennis.basededonnee.dto.TournoiDto;
+import com.mycompany.tennis.basededonnee.dto.*;
 import com.mycompany.tennis.basededonnee.entity.Epreuve;
 import com.mycompany.tennis.basededonnee.entity.Joueur;
 import com.mycompany.tennis.basededonnee.repository.EpreuveRepository;
@@ -52,6 +49,8 @@ public class EpreuveService {
                joueurDto.setPrenom(joueur.getPrenom());
                joueurDto.setNom(joueur.getNom());
                dto.getParticipants().add(joueurDto);
+
+
            }
             tx.commit();
 

@@ -1,10 +1,7 @@
 package com.mycompany.tennis.basededonnee.service;
 
 import com.mycompany.tennis.basededonnee.HibernateUtil;
-import com.mycompany.tennis.basededonnee.dto.EpreuveFullDto;
-import com.mycompany.tennis.basededonnee.dto.JoueurDto;
-import com.mycompany.tennis.basededonnee.dto.MatchDto;
-import com.mycompany.tennis.basededonnee.dto.TournoiDto;
+import com.mycompany.tennis.basededonnee.dto.*;
 import com.mycompany.tennis.basededonnee.entity.Epreuve;
 import com.mycompany.tennis.basededonnee.entity.Match;
 import com.mycompany.tennis.basededonnee.repository.MatchRepository;
@@ -57,6 +54,19 @@ matchDto.setFinaliste(joueurDtoF);
             epreuveDto.setTournoi(tournoiDto);
 
             matchDto.setEpreuveFullDto(epreuveDto);
+
+
+            ScoreFullDto scoreDto = new ScoreFullDto();
+             scoreDto.setId(match.getScore().getId());
+            scoreDto.setSet1(match.getScore().getSet1());
+            scoreDto.setSet2(match.getScore().getSet2());
+            scoreDto.setSet3(match.getScore().getSet3());
+            scoreDto.setSet4(match.getScore().getSet4());
+            scoreDto.setSet5(match.getScore().getSet5());
+
+            matchDto.setScoreFullDto(scoreDto);
+
+            scoreDto.setMatchDto(matchDto);
 
             tx.commit();
 

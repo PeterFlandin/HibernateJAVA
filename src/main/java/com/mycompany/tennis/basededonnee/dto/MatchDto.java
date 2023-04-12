@@ -13,6 +13,16 @@ public class MatchDto {
 
     private EpreuveFullDto epreuveFullDto;
 
+    private ScoreFullDto scoreFullDto;
+
+    public ScoreFullDto getScoreFullDto() {
+        return scoreFullDto;
+    }
+
+    public void setScoreFullDto(ScoreFullDto scoreFullDto) {
+        this.scoreFullDto = scoreFullDto;
+    }
+
     public EpreuveFullDto getEpreuveFullDto() {
         return epreuveFullDto;
     }

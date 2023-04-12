@@ -6,11 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="1b8dd51b-faf1-47f9-a0f1-4ec98c854f24" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/dto/EpreuveFullDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/dto/EpreuveFullDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/entity/Epreuve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/entity/Epreuve.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/dto/MatchDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/dto/MatchDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/entity/Match.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/entity/Match.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/service/EpreuveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/service/EpreuveService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/service/MatchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/service/MatchService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../console-ui/src/main/java/com/mycompany/tennis/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../console-ui/src/main/java/com/mycompany/tennis/UI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../console-ui/src/main/java/com/mycompany/tennis/controller/EpreuveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../console-ui/src/main/java/com/mycompany/tennis/controller/EpreuveController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../console-ui/src/main/java/com/mycompany/tennis/controller/MatchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../console-ui/src/main/java/com/mycompany/tennis/controller/MatchController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -354,11 +355,17 @@
       <option name="project" value="LOCAL" />
       <updated>1681255136252</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="manytomany">
+      <created>1681334406771</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1681334406771</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="service add" />
     <MESSAGE value="service add tournoi" />
     <MESSAGE value="service add tournoi entre federer et muray dans la base   donnee sql dbeaver" />
     <MESSAGE value="Dao" />
@@ -383,7 +390,8 @@
     <MESSAGE value="dto match / joueur" />
     <MESSAGE value="dto one to one" />
     <MESSAGE value="score dto avec tournoi &amp; joueur" />
-    <option name="LAST_COMMIT_MESSAGE" value="score dto avec tournoi &amp; joueur" />
+    <MESSAGE value="manytomany" />
+    <option name="LAST_COMMIT_MESSAGE" value="manytomany" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
