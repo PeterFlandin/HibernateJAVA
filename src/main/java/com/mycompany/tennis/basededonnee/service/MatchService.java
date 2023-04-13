@@ -3,6 +3,7 @@ package com.mycompany.tennis.basededonnee.service;
 import com.mycompany.tennis.basededonnee.HibernateUtil;
 import com.mycompany.tennis.basededonnee.dto.*;
 import com.mycompany.tennis.basededonnee.entity.Epreuve;
+import com.mycompany.tennis.basededonnee.entity.Joueur;
 import com.mycompany.tennis.basededonnee.entity.Match;
 import com.mycompany.tennis.basededonnee.repository.MatchRepository;
 import com.mycompany.tennis.basededonnee.repository.ScoreRepository;
@@ -17,6 +18,49 @@ public class MatchService {
     public MatchService(){
         this.matchRepository=new MatchRepository();
         this.scoreRepository=new ScoreRepository();
+    }
+
+
+
+    public void tapisVert(Long id){
+        Session session=null;
+        Match match = null;
+        Transaction tx = null;
+
+        try {
+            session = HibernateUtil.getSessionFactory().getCurrentSession();
+            tx = session.beginTransaction();
+
+            match = matchRepository.getById(id);
+
+            Joueur ancienVainquer = match.getVainqueur();
+
+            match.setVainqueur(match.getFinaliste());
+
+            match.setFinaliste(ancienVainquer);
+
+
+            match.getScore().setSet1((byte)0);
+            match.getScore().setSet2((byte)0);
+            match.getScore().setSet3((byte)0);
+            match.getScore().setSet4((byte)0);
+            match.getScore().setSet5((byte)0);
+
+            tx.commit();
+
+        } catch (Throwable tr){
+            if (tx != null){
+                tx.rollback();
+            }
+            tr.printStackTrace();
+        } finally {
+            if(session!=null){
+                session.close();
+            }
+
+        }
+
+
     }
 
     public MatchDto getMatch(Long id){
@@ -87,5 +131,7 @@ matchDto.setFinaliste(joueurDtoF);
 
 
 }
+
+
 
 }
