@@ -23,5 +23,15 @@ public class MatchRepository {
 
         }
 
+
+        public void create(Match match){
+
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        session.persist(match);
+
+            System.out.println("match cree");
+
+        }
+
     }
 

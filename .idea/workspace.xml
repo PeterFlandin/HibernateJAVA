@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1b8dd51b-faf1-47f9-a0f1-4ec98c854f24" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/entity/Match.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/entity/Match.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/repository/MatchRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/repository/MatchRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/service/MatchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/tennis/basededonnee/service/MatchService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../console-ui/src/main/java/com/mycompany/tennis/controller/MatchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../console-ui/src/main/java/com/mycompany/tennis/controller/MatchController.java" afterDir="false" />
     </list>
@@ -365,11 +367,17 @@
       <option name="project" value="LOCAL" />
       <updated>1681337156989</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="changer vainqueur par finaliste methode">
+      <created>1681394335568</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1681394335568</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="service add tournoi entre federer et muray dans la base   donnee sql dbeaver" />
     <MESSAGE value="Dao" />
     <MESSAGE value="Controller" />
     <MESSAGE value="Hibernate" />
@@ -394,7 +402,8 @@
     <MESSAGE value="score dto avec tournoi &amp; joueur" />
     <MESSAGE value="manytomany" />
     <MESSAGE value="OnetoOne" />
-    <option name="LAST_COMMIT_MESSAGE" value="OnetoOne" />
+    <MESSAGE value="changer vainqueur par finaliste methode" />
+    <option name="LAST_COMMIT_MESSAGE" value="changer vainqueur par finaliste methode" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

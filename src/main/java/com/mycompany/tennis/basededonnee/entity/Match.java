@@ -19,7 +19,7 @@ private Joueur finaliste;
 @OneToOne(fetch = FetchType.LAZY)
 @JoinColumn(name = "id_epreuve")
 private Epreuve epreuve;
-@OneToOne(mappedBy = "match")
+@OneToOne(mappedBy = "match", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
 private Score score;
 
     public Score getScore() {
